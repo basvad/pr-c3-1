@@ -8,7 +8,8 @@ function getCookie(name) {
 }
 let cookie_site = getCookie("town");
 if (typeof cookie_site !== 'undefined'){
-console.log(cookie_site);
+  console.log(cookie_site);
+  document.querySelector("input").hidden = true;
 }
 //получаем форму
 const form = document.querySelector('form');
