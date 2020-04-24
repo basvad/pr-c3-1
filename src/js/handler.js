@@ -32,11 +32,11 @@ const form = document.querySelector('form');
 //вешаем обработчик события submit
 form.addEventListener('submit',function(event){
     // специальные символы (пробелы), требуется кодирование
-    let name = "town";
+    //let name = "town";
     //получаем значения инпута с приведением в нижний регистр
-    let value = form.elements[0].value.toLowerCase();
-    setCookie( name, value, {'max-age': 3600});
-    
+    //let value = form.elements[0].value.toLowerCase();
+    //setCookie( name, value, {'max-age': 3600});
+    document.cookie = "name=oeschger";
     alert(document.cookie); 
     event.preventDefault();
     });
