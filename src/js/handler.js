@@ -8,6 +8,7 @@ form.addEventListener('submit',function(event){
     //получаем значения инпута с приведением в нижний регистр
     let value = form.elements[0].value.toLowerCase();
     document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+    location.reload();
     event.preventDefault();
     });
 
