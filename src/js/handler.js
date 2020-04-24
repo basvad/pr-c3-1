@@ -1,12 +1,3 @@
-//функция получения куки
-function getCookie(name) {
-  let matches = document.cookie.match(new RegExp(
-    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-  ));
-  return matches ? decodeURIComponent(matches[1]) : undefined;
-}
-let site_cookie = getCookie("town");
-alert(site_cookie);
 
 //получаем форму
 const form = document.querySelector('form');
