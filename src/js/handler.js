@@ -1,15 +1,12 @@
-//функция установки куки
 function setCookie(name, value, options = {}) {
 
   options = {
-    //куки должны быть доступны на всех страницах сайта
     path: '/',
     // при необходимости добавьте другие значения по умолчанию
-    
+    ...options
   };
 
-  if (options.expires.toUTCString) {
-      //toUTCString возвращает пригодную для человеческого восприятия строку на английском языке в американском формате, согласно универсальному часовому поясу (Гринвичу)
+  if (options.expires instanceof Date) {
     options.expires = options.expires.toUTCString();
   }
 
@@ -34,10 +31,13 @@ const form = document.querySelector('form');
 
 //вешаем обработчик события submit
 form.addEventListener('submit',function(event){
+    // специальные символы (пробелы), требуется кодирование
+    let name = "town";
     //получаем значения инпута с приведением в нижний регистр
-    let cookie_town = form.elements[0].value.toLowerCase();
-    //console.log(cookie_town);
-    setCookie('user', cookie_town, {'max-age': 3600});
+    let value = form.elements[0].value.toLowerCase();
+    setCookie( name, value, {'max-age': 3600});
+    
+    alert(document.cookie); 
     event.preventDefault();
     });
 
