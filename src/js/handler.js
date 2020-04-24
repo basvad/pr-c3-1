@@ -6,7 +6,8 @@ function getCookie(name) {
   ));
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
-
+let cookie_site = getCookie("town");
+console.log(cookie_site);
 //получаем форму
 const form = document.querySelector('form');
 
@@ -17,8 +18,6 @@ form.addEventListener('submit',function(event){
     //получаем значения инпута с приведением в нижний регистр
     let value = form.elements[0].value.toLowerCase();
     document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-    let cookie_site = getCookie(name);
-    console.log(cookie_site);
     //location.reload();
     event.preventDefault();
     });
