@@ -1,3 +1,11 @@
+// возвращает куки с указанным name,
+// или undefined, если ничего не найдено
+function getCookie(name) {
+  let matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
 
 //получаем форму
 const form = document.querySelector('form');
@@ -9,7 +17,9 @@ form.addEventListener('submit',function(event){
     //получаем значения инпута с приведением в нижний регистр
     let value = form.elements[0].value.toLowerCase();
     document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-    location.reload();
+    let cookie_site = getCookie(name);
+    console.log(cookie_site);
+    //location.reload();
     event.preventDefault();
     });
 
