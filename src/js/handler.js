@@ -7,7 +7,9 @@ function getCookie(name) {
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
 let cookie_site = getCookie("town");
+if (typeof cookie_site !== 'undefined'){
 console.log(cookie_site);
+}
 //получаем форму
 const form = document.querySelector('form');
 
