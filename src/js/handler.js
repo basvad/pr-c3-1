@@ -6,13 +6,14 @@ function getCookie(name) {
   ));
   return matches ? decodeURIComponent(matches[1]) : undefined;
 }
+//получаем форму
+const form = document.querySelector('form');
+
 let cookie_site = getCookie("town");
 if (typeof cookie_site !== 'undefined'){
   console.log(cookie_site);
   document.querySelector("input").hidden = true;
 }
-//получаем форму
-const form = document.querySelector('form');
 
 //вешаем обработчик события submit
 form.addEventListener('submit',function(event){
