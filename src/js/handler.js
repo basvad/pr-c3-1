@@ -29,5 +29,5 @@ if (typeof cookie_site === 'undefined'){
 else{
     console.log(cookie_site);
     main.hidden = true; 
-    question.innerHTML="<p>Ваш город:</p>";
+    question.innerHTML="<p>Ваш город- </p>"+ cookie_site;
 }
