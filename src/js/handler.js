@@ -8,17 +8,13 @@ function getCookie(name) {
 }
 //получаем форму
 const form = document.querySelector('form');
-//получаем инпут
+//получаем основной div
 const main = document.getElementById('vote-section');
 
 let cookie_site = getCookie("town");
-if (typeof cookie_site !== 'undefined'){
-  console.log(cookie_site);
-  main.hidden = true;
-}
-
-//вешаем обработчик события submit
-form.addEventListener('submit',function(event){
+if (typeof cookie_site === 'undefined'){
+  //вешаем обработчик события submit
+    form.addEventListener('submit',function(event){
     // специальные символы (пробелы), требуется кодирование
     let name = "town";
     //получаем значения инпута с приведением в нижний регистр
@@ -27,4 +23,9 @@ form.addEventListener('submit',function(event){
     //location.reload();
     event.preventDefault();
     });
+}
+else{
+    console.log(cookie_site);
+    main.hidden = true; 
+}
 
