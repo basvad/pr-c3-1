@@ -1,34 +1,9 @@
 //функция удаления куки
 function deleteCookie(name) {
-  setCookie(name, "", {
-    'max-age': -1
-  })
+  //выставить время жизни cookie так, чтобы оно было просрочено и кука удалилась
+  document.cookie = encodeURIComponent(name) + "; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
 }
-// функция установки куки
-function setCookie(name, value, options = {}) {
 
-  options = {
-    path: '/',
-    // при необходимости добавьте другие значения по умолчанию
-    ...options
-  };
-
-  if (options.expires instanceof Date) {
-    options.expires = options.expires.toUTCString();
-  }
-
-  let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-
-  for (let optionKey in options) {
-    updatedCookie += "; " + optionKey;
-    let optionValue = options[optionKey];
-    if (optionValue !== true) {
-      updatedCookie += "=" + optionValue;
-    }
-  }
-
-  document.cookie = updatedCookie;
-}
 // возвращает куки с указанным name,
 // или undefined, если ничего не найдено
 function getCookie(name) {
