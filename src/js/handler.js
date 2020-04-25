@@ -8,11 +8,13 @@ function getCookie(name) {
 }
 //получаем форму
 const form = document.querySelector('form');
+//получаем инпут
+const main = document.getElementById('vote-section');
 
 let cookie_site = getCookie("town");
 if (typeof cookie_site !== 'undefined'){
   console.log(cookie_site);
-  document.querySelector("input").hidden = true;
+  main.hidden = true;
 }
 
 //вешаем обработчик события submit
