@@ -12,7 +12,9 @@ const form = document.querySelector('form');
 const main = document.getElementById('vote-section');
 // получаем div с вопросом
 const question = document.getElementById('question');
-
+// получаем альтернативный div
+const advanced = document.getElementById('advanced');
+advanced.hidden =true;
 let cookie_site = getCookie("town");
 if (typeof cookie_site === 'undefined'){
   //вешаем обработчик события submit
@@ -29,5 +31,6 @@ if (typeof cookie_site === 'undefined'){
 else{
     console.log(cookie_site);
     main.hidden = true; 
+    advanced.hidden =false;
     question.innerHTML="<p>Ваш город - <strong>"+cookie_site+"</strong> </p>";
 }
