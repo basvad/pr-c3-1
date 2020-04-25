@@ -21,8 +21,8 @@ if (typeof cookie_site === 'undefined'){
     form.addEventListener('submit',function(event){
     // специальные символы (пробелы), требуется кодирование
     let name = "town";
-    //получаем значения инпута с приведением в нижний регистр
-    let value = form.elements[0].value.toLowerCase();
+    //получаем значения инпута с приведением в верхний регистр
+    let value = form.elements[0].value.toUpperCase();
     document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
     location.reload();
     event.preventDefault();
