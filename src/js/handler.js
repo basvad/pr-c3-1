@@ -1,7 +1,7 @@
 //функция удаления куки
-function deleteCookie(name) {
+function deleteCookie() {
   //выставить время жизни cookie так, чтобы оно было просрочено и кука удалилась
-  document.cookie = encodeURIComponent(name) + "; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
+  document.cookie = "name=town; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
 }
 
 // возвращает куки с указанным name,
