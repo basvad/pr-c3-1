@@ -40,4 +40,8 @@ else{
     main.hidden = true; 
     advanced.hidden =false;
     question.innerHTML="<p>Ваш город - <strong>"+cookie_site+"</strong> </p>";
+    //вешаем обработчки на кнопку сброса куки
+    document.getElementById('reset_cookies').addEventListener('click',function(){
+      alert('Ok');
+    })
 }
