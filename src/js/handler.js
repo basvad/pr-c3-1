@@ -45,7 +45,7 @@ else{
     //вешаем обработчки на кнопку сброса куки
     document.getElementById('reset_cookies').addEventListener('click',function(){
       //удаляем куку 
-      deleteCookie('town');
+      deleteCookie();
       //обновляемся
       location.reload();
     })
