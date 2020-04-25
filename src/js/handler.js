@@ -24,7 +24,7 @@ if (typeof cookie_site === 'undefined'){
     //получаем значения инпута с приведением в нижний регистр
     let value = form.elements[0].value.toLowerCase();
     document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
-    //location.reload();
+    location.reload();
     event.preventDefault();
     });
 }
