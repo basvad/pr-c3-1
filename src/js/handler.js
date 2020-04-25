@@ -32,7 +32,7 @@ if (typeof cookie_site === 'undefined'){
      // +1 день от текущей даты
     let date = new Date(Date.now() + 86400e3);
     date = date.toUTCString();
-    document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value)+'; expires=" + date;
+    document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value)+'; expires=' + date;
     location.reload();
     event.preventDefault();
     });
