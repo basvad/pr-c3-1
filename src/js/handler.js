@@ -10,6 +10,8 @@ function getCookie(name) {
 const form = document.querySelector('form');
 //получаем основной div
 const main = document.getElementById('vote-section');
+// получаем div с вопросом
+const question = document.getElementById('question');
 
 let cookie_site = getCookie("town");
 if (typeof cookie_site === 'undefined'){
@@ -27,5 +29,5 @@ if (typeof cookie_site === 'undefined'){
 else{
     console.log(cookie_site);
     main.hidden = true; 
+    question.innerHTML="<p>Ваш город:</p>";
 }
-
