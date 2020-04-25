@@ -45,7 +45,7 @@ else{
     //вешаем обработчки на кнопку сброса куки
     document.getElementById('reset_cookies').addEventListener('click',function(){
       //удаляем куку 
-      deleteCookie();
+      document.cookie = "name=town; expires=Thu, 01 Jan 1970 00:00:00 GMT;";
       //обновляемся
       location.reload();
     })
