@@ -29,7 +29,10 @@ if (typeof cookie_site === 'undefined'){
     let name = "town";
     //получаем значения инпута с приведением в верхний регистр
     let value = form.elements[0].value.toUpperCase();
-    document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value);
+     // +1 день от текущей даты
+    let date = new Date(Date.now() + 86400e3);
+    date = date.toUTCString();
+    document.cookie = encodeURIComponent(name) + '=' + encodeURIComponent(value)+'; expires=" + date;
     location.reload();
     event.preventDefault();
     });
