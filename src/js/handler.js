@@ -23,6 +23,8 @@ const form = document.querySelector('form');
 const main = document.getElementById('vote-section');
 // получаем div с вопросом
 const question = document.getElementById('question');
+// получаем div с заголовком
+const panel-heading = document.getElementById('panel-heading');
 // получаем альтернативный div
 const advanced = document.getElementById('advanced');
 advanced.hidden =true;
@@ -45,8 +47,9 @@ if (typeof cookie_site === 'undefined'){
 else{
     console.log(cookie_site);
     main.hidden = true; 
+    question.hidden = true;
     advanced.hidden =false;
-    question.innerHTML="<p>Ваш город - <strong>"+cookie_site+"</strong> </p>";
+    panel-heading.innerHTML="<p>Ваш город - <strong>"+cookie_site+"</strong> </p>";
     //вешаем обработчки на кнопку сброса куки
     document.getElementById('reset_cookies').addEventListener('click',function(){
       //удаляем куку 
